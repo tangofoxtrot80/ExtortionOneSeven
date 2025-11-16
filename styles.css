@@ -1,0 +1,961 @@
+/* Memorial Website Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 3px solid #c9b037;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #c9b037;
+    font-style: italic;
+}
+
+/* Navigation */
+nav {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid #c9b037;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-size: 1rem;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+nav a:hover {
+    color: #c9b037;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 1.5rem;
+}
+
+.dropdown .dropbtn {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropbtn {
+    color: #c9b037;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.95);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    border: 1px solid #c9b037;
+    border-top: none;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-content a {
+    color: #e0e0e0;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background 0.3s, color 0.3s;
+    margin: 0;
+    text-transform: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.dropdown-content a:hover {
+    background: rgba(201, 176, 55, 0.2);
+    color: #c9b037;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* Home Page - Memorial Grid */
+.memorial-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border-left: 4px solid #c9b037;
+}
+
+.memorial-intro h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.memorial-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+}
+
+.memorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Center the last memorial card when it's alone */
+.memorial-card.center-card {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 280px;
+}
+
+.memorial-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #3a3a52;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.memorial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(201, 176, 55, 0.2);
+    border-color: #c9b037;
+}
+
+.memorial-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #c9b037;
+}
+
+.memorial-card h3 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.memorial-card .rank {
+    color: #c9b037;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+.memorial-card .dates {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.memorial-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(201, 176, 55, 0.2);
+    color: #c9b037;
+    text-decoration: none;
+    border: 1px solid #c9b037;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.memorial-card a:hover {
+    background: #c9b037;
+    color: #1a1a2e;
+}
+
+/* Individual Memorial Page */
+.memorial-profile {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 3rem;
+    border-left: 4px solid #c9b037;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #3a3a52;
+}
+
+.profile-header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid #c9b037;
+}
+
+.profile-header h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.profile-header .rank {
+    font-size: 1.3rem;
+    color: #c9b037;
+    margin-bottom: 0.5rem;
+}
+
+.profile-header .service-dates {
+    color: #a0a0a0;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.profile-content {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.profile-section {
+    
+    margin-bottom: 2.5rem;
+}
+
+.profile-section h3 {
+    font-size: 1.5rem;
+    color: #c9b037;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(201, 176, 55, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.profile-section p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+    margin-bottom: 1rem;
+}
+
+/* Media Elements */
+.media-container {
+    margin: 2rem 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.media-container video,
+.media-container audio {
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.media-container h4 {
+    color: #c9b037;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Individual Event Location Pages */
+.event-location-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.location-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2.5rem 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    border-top: 4px solid #c9b037;
+    border-bottom: 4px solid #c9b037;
+}
+
+.location-header h2 {
+    font-size: 2.5rem;
+    color: #c9b037;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Event Info Box */
+.event-info-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #c9b037;
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.event-info-box h3 {
+    font-size: 1.6rem;
+    color: #c9b037;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.info-item {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(201, 176, 55, 0.3);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-size: 0.95rem;
+    color: #c9b037;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.info-value {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+}
+
+.info-address {
+    font-size: 1rem;
+    color: #d0d0d0;
+    font-style: italic;
+}
+
+/* Location Description */
+.location-description {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #c9b037;
+    margin-bottom: 2.5rem;
+}
+
+.location-description h3 {
+    font-size: 1.8rem;
+    color: #c9b037;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.location-description p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #d0d0d0;
+    margin-bottom: 1.3rem;
+}
+
+/* Event Registration Box */
+.event-registration {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 4px solid #c9b037;
+    margin-bottom: 2rem;
+}
+
+.event-registration h3 {
+    font-size: 1.8rem;
+    color: #c9b037;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.event-registration p {
+    font-size: 1.1rem;
+    color: #d0d0d0;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.event-contact {
+    font-size: 0.95rem;
+    color: #a0a0a0;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+/* Back to Events Link */
+.back-to-events {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.back-to-events a {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    color: #c9b037;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 1px solid #c9b037;
+    border-radius: 4px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-to-events a:hover {
+    background: rgba(201, 176, 55, 0.2);
+    transform: translateX(-5px);
+}
+
+/* August 6, 2011 Incident Page Styles */
+.incident-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.incident-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 3rem 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    border-top: 4px solid #c9b037;
+    border-bottom: 4px solid #c9b037;
+}
+
+.incident-header h2 {
+    font-size: 3rem;
+    color: #c9b037;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.incident-subtitle {
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Incident Details Box */
+.incident-details {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #c9b037;
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.incident-details h3 {
+    font-size: 1.8rem;
+    color: #c9b037;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.detail-section {
+    display: flex;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(201, 176, 55, 0.3);
+}
+
+.detail-section:last-of-type {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-size: 1.1rem;
+    color: #c9b037;
+    font-weight: bold;
+    min-width: 180px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-value {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    flex: 1;
+}
+
+.detail-value.primary-time {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Time Conversions */
+.time-conversions {
+    background: rgba(201, 176, 55, 0.1);
+    padding: 1.5rem;
+    margin: 1rem 0 1.5rem 180px;
+    border-radius: 4px;
+    border-left: 3px solid #c9b037;
+}
+
+.conversion-item {
+    display: flex;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.conversion-label {
+    color: #a0a0a0;
+    min-width: 200px;
+    font-style: italic;
+}
+
+.conversion-value {
+    color: #d0d0d0;
+    font-family: 'Courier New', monospace;
+}
+
+/* Narrative Section */
+.incident-narrative {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #c9b037;
+    margin-bottom: 2.5rem;
+}
+
+.incident-narrative h3 {
+    font-size: 1.8rem;
+    color: #c9b037;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.incident-narrative p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #d0d0d0;
+    margin-bottom: 1.3rem;
+}
+
+/* Quote Section */
+.incident-quote {
+    background: rgba(201, 176, 55, 0.1);
+    border: 2px solid #c9b037;
+    border-radius: 8px;
+    padding: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.incident-quote blockquote {
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-style: italic;
+    line-height: 1.8;
+    margin: 0 0 1rem 0;
+    font-family: 'Georgia', serif;
+}
+
+.incident-quote cite {
+    font-size: 1rem;
+    color: #c9b037;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Fallen Heroes Link Section */
+.fallen-heroes-link {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 4px solid #c9b037;
+    margin-bottom: 2rem;
+}
+
+.fallen-heroes-link h3 {
+    font-size: 1.8rem;
+    color: #c9b037;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.fallen-heroes-link p {
+    font-size: 1.1rem;
+    color: #d0d0d0;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.heroes-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: rgba(201, 176, 55, 0.2);
+    color: #c9b037;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 2px solid #c9b037;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.heroes-button:hover {
+    background: #c9b037;
+    color: #1a1a2e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(201, 176, 55, 0.4);
+}
+
+/* Events Page Styles */
+.events-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.events-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border-left: 4px solid #c9b037;
+}
+
+.events-header h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* YouTube Video Section */
+.video-section {
+    margin: 2rem 0 3rem 0;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.youtube-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid #c9b037;
+}
+
+.youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Event Description */
+.event-description {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #c9b037;
+    margin-bottom: 2rem;
+}
+
+.event-description h3 {
+    font-size: 1.8rem;
+    color: #c9b037;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.event-description p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+    margin-bottom: 1rem;
+}
+
+.event-description ul {
+    margin: 1rem 0 1rem 2rem;
+    color: #d0d0d0;
+}
+
+.event-description li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Event Details Box */
+.event-details-box {
+    background: rgba(201, 176, 55, 0.1);
+    border: 2px solid #c9b037;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.event-details-box h3 {
+    font-size: 1.6rem;
+    color: #c9b037;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+.detail-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(201, 176, 55, 0.2);
+    color: #e0e0e0;
+    font-size: 1.05rem;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item strong {
+    color: #c9b037;
+    display: inline-block;
+    min-width: 120px;
+}
+
+/* Event Locations Section */
+.event-locations {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #c9b037;
+    margin-bottom: 2rem;
+}
+
+.event-locations h3 {
+    font-size: 1.8rem;
+    color: #c9b037;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.locations-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #d0d0d0;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.location-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.location-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: rgba(201, 176, 55, 0.1);
+    border: 2px solid #c9b037;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.location-button:hover {
+    background: rgba(201, 176, 55, 0.2);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(201, 176, 55, 0.3);
+}
+
+.location-name {
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.location-arrow {
+    font-size: 1.5rem;
+    color: #c9b037;
+    transition: transform 0.3s;
+}
+
+.location-button:hover .location-arrow {
+    transform: translateX(5px);
+}
+
+/* Registration Section */
+.registration-section {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 4px solid #c9b037;
+    margin-bottom: 2rem;
+}
+
+.registration-section h3 {
+    font-size: 1.8rem;
+    color: #c9b037;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.registration-section p {
+    font-size: 1.05rem;
+    color: #d0d0d0;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.register-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: #c9b037;
+    color: #1a1a2e;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 1rem 0;
+}
+
+.register-button:hover {
+    background: #d4bb4a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(201, 176, 55, 0.4);
+}
+
+.registration-note {
+    font-size: 0.95rem;
+    color: #a0a0a0;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.6);
+    color: #a0a0a0;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 3px solid #c9b037;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .memorial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+    
+    nav a,
+    .dropdown {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .dropdown-content {
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .profile-header h2 {
+        font-size: 2rem;
+    }
+    
+    .location-buttons {
+        grid-template-columns: 1fr;
+    }
+}
